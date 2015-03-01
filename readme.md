@@ -14,7 +14,7 @@ If you are familiar with Git, you can clone this repository from Github inside t
 
 Or you can use it as a Git Submodule.
 
-    git submodule add  https://github.com/roylodder/kirby-roles-field.git site/fields/roles
+    git submodule add https://github.com/roylodder/kirby-roles-field.git site/fields/roles
 
 ## How to use it
 
