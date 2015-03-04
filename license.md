@@ -1,4 +1,4 @@
-the MIT License
+The MIT License
 
 Copyright (c) 2010-2015 Roy Lodder
 
