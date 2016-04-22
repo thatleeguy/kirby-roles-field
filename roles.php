@@ -2,16 +2,12 @@
 
 class RolesField extends CheckboxesField {
 
-  public function __construct() {
-    $this->type    = 'checkboxes';
-    $this->options = array();
-
-    foreach(site()->roles() as $role) {
-      if($role !='admin') {
-        $this->options[$role->id()] = $role->name();
-      }
+  public function options() {
+    foreach(kirby()->site()->roles() as $role) {
+      if (is_array($this->exclude) && in_array($role, $this->exclude)) continue;
+        $options[$role->id()] =  $role->name();
     }
-
+    return $options;
   }
 
 }
