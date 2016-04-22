@@ -1,29 +1,87 @@
-# Roles field for Kirby 2
+# Kirby Roles
 
-A simple checkbox field for Kirby CMS which lets you select user roles. All the roles are shown except the admin role. You can use this for frontend authentication by role.
+**Version 0.2**
+
+A checkboxes field for Kirby CMS which lets you select roles. All roles are shown by default. You can exclude roles from the options.
 
 ## Installation
 
-### Download
-[Download the files](https://github.com/roylodder/kirby-roles-field/archive/master.zip) and put them in a folder named `roles`, inside the`site/fields` folder. If the fields folder doesn't exist, create it.
+1. Add `roles` field folder into `/site/roles/`
 
-### With Git
-If you are familiar with Git, you can clone this repository from Github inside the `/site/fields` folder.
+## Setup
 
-    git clone https://github.com/roylodder/kirby-roles-field.git roles
+### Blueprint
 
-Or you can use it as a Git Submodule.
+Below is the most basic example.
 
-    git submodule add https://github.com/roylodder/kirby-roles-field.git site/fields/roles
+```md
+fields:
+  roles:
+    label: Roles
+    type: roles
+```
 
-## How to use it
+### Default
 
-In your [blueprint](http://getkirby.com/docs/panel/blueprints) add the following field:
+If you want the selected role to be `admin` you can set a default value.
 
-    fields:
-      roles:
-        label: Roles
-        type: roles
+```md
+fields:
+  roles:
+    label: Roles
+    default: admin
+    type: roles
+```
+
+
+### Exclude roles
+
+If you want to hide a role you can simply exclude it.
+
+```md
+fields:
+  roles:
+    label: Roles
+    type: roles
+    exclude:
+      admin
+```
+
+You also can exclude multiple roles.
+
+```md
+fields:
+  roles:
+    label: Roles
+    type: roles
+    exclude:
+      admin
+      clients
+```
+
+### Columns
+
+Specifying the column option lets you change the number of option items that are displayed per row in the panel (1 till 5, default: 2).
+
+```md
+fields:
+  roles:
+    label: Roles
+    type: roles
+    columns: 3
+```
+
+# Changelog
+
+## 0.2
+
+- Removed excluding of the admin role.
+- Added option for excluding roles.
+- Added option for default selected user role.
+
+## 0.1
+
+- Initial release
 
 ## Authors
 
